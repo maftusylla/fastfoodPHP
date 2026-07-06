@@ -1,1 +1,20 @@
 
+<?php
+$commandes = [
+    0 => [
+        'id' => 0,
+        'id_client' => 0,
+        'date_commande' => '2026-07-01 12:00:00',
+        'lignes_commande' => [], // ['id_plat' => .., 'quantite' => .., 'prix_unitaire' => ..]
+        'montant_total' => 4500,
+        'statut' => 'Payée',
+    ],
+    1 => [
+        'id' => 1,
+        'id_client' => 0,
+        'date_commande' => '2026-07-02 13:30:00',
+        'lignes_commande' => [],
+        'montant_total' => 3500,
+        'statut' => 'En préparation',
+    ],
+];
