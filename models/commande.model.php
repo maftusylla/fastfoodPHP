@@ -1,5 +1,5 @@
-
 <?php
+
 $commandes = [
     0 => [
         'id' => 0,
@@ -18,7 +18,6 @@ $commandes = [
         'statut' => 'En préparation',
     ],
 ];
-
 
 $enregistrerCommande = function (int $idClient, array $lignesCommande, float $montantTotal, string $statut = "En attente"): int {
     global $commandes;
@@ -44,6 +43,13 @@ $rechercherCommandeParId = function (int $idCommande): ?array {
     return null;
 };
 
+$recupererCommandesParStatut = function (string $statut): array {
+    global $commandes;
+    return array_values(array_filter($commandes, function ($commande) use ($statut) {
+        return $commande['statut'] === $statut;
+    }));
+};
+
 $mettreAJourStatut = function (int $idCommande, string $statut): bool {
     global $commandes;
     foreach ($commandes as $index => $commande) {
@@ -53,3 +59,4 @@ $mettreAJourStatut = function (int $idCommande, string $statut): bool {
         }
     }
     return false;
+};

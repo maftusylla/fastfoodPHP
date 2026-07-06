@@ -1,3 +1,4 @@
+
 $enregistrerPaiement = function (int $idCommande, float $montant, string $modePaiement, string $statut): int {
     global $paiements;
     $idPaiement = count($paiements);
