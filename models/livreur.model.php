@@ -1,7 +1,18 @@
-<?php
 
-$livreurs = [
-    0 => ['id' => 0, 'nom' => 'Diop', 'prenom' => 'Moussa', 'telephone' => '781112233', 'statut' => 'Disponible'],
-    1 => ['id' => 1, 'nom' => 'Fall', 'prenom' => 'Awa', 'telephone' => '782223344', 'statut' => 'Disponible'],
-    2 => ['id' => 2, 'nom' => 'Sarr', 'prenom' => 'Ibrahima', 'telephone' => '783334455', 'statut' => 'Occupé'],
-];
+$recupererLivreursParStatut = function (string $statut): array {
+    global $livreurs;
+    return array_values(array_filter($livreurs, function ($livreur) use ($statut) {
+        return $livreur['statut'] === $statut;
+    }));
+};
+
+$mettreAJourStatutLivreur = function (int $idLivreur, string $statut): bool {
+    global $livreurs;
+    foreach ($livreurs as $index => $livreur) {
+        if ($livreur['id'] === $idLivreur) {
+            $livreurs[$index]['statut'] = $statut;
+            return true;
+        }
+    }
+    return false;
+};

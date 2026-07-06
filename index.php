@@ -1,6 +1,4 @@
 <?php
-
-
 require_once(__DIR__ . "/models/plat.model.php");
 require_once(__DIR__ . "/models/commande.model.php");
 require_once(__DIR__ . "/models/panier.model.php");
