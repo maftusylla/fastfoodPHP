@@ -1,3 +1,4 @@
+
 $genererRecu = function (int $idPaiement): array {
     global $recus, $trouverPaiementParId;
     $paiement = $trouverPaiementParId($idPaiement);

@@ -1,4 +1,5 @@
 
+
 $creerNotification = function (int $idDestinataire, string $message): bool {
     global $notifications;
     $notifications[] = [
