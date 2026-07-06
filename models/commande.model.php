@@ -18,3 +18,18 @@ $commandes = [
         'statut' => 'En préparation',
     ],
 ];
+
+
+$enregistrerCommande = function (int $idClient, array $lignesCommande, float $montantTotal, string $statut = "En attente"): int {
+    global $commandes;
+    $idCommande = count($commandes);
+    $commandes[] = [
+        'id' => $idCommande,
+        'id_client' => $idClient,
+        'date_commande' => date('Y-m-d H:i:s'),
+        'lignes_commande' => $lignesCommande,
+        'montant_total' => $montantTotal,
+        'statut' => $statut,
+    ];
+    return $idCommande;
+};

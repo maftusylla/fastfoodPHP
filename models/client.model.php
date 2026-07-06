@@ -11,3 +11,14 @@ $clients = [
         'adresse' => 'Dakar, Sénégal',
     ],
 ];
+
+
+$rechercherClient = function (string $email, string $motDePasse): ?array {
+    global $clients;
+    foreach ($clients as $client) {
+        if ($client['email'] === $email && $client['mot_de_passe'] === $motDePasse) {
+            return $client;
+        }
+    }
+    return null;
+};
