@@ -1,9 +1,9 @@
 <?php
-require_once(__DIR__ . "/../model/commande.model.php");
-require_once(__DIR__ . "/../service/paiement.service.php");
+require_once(__DIR__ . "/../models/commande.model.php");
+require_once(__DIR__ . "/../services/paiement.service.php");
 require_once(__DIR__ . "/../utils/view.php");
-require_once(__DIR__ . "/../view/paiement.view.php");
-require_once(__DIR__ . "/../view/recu.view.php");
+require_once(__DIR__ . "/../views/paiement.view.php");
+require_once(__DIR__ . "/../views/recu.view.php");
 
 $choisirPaiement = function (): void {
     global $commandes, $utilisateurConnecte, $saisie, $rechercherCommandeParId,
